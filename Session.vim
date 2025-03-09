@@ -22,9 +22,10 @@ badd +10 package.json
 badd +1 .github/workflows/LintAndTestWorkflow.yml
 badd +1 .github/pull_request_template.md
 badd +3 .gitignore
+badd +1 README.md
 argglobal
 %argdel
-edit .gitignore
+edit README.md
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -33,7 +34,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt .github/pull_request_template.md
+balt .gitignore
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -42,12 +43,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 3 - ((2 * winheight(0) + 16) / 32)
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 04|
+keepjumps 1
+normal! 033|
 lcd ~/Docomentss/aC/nodeing/node-ts-tem
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
